@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4edf95d3a64d664e9faa4030c00d8d3, type: 3}
+  m_Name: BaseTileSO
+  m_EditorClassIdentifier: 
+  prefabRef: {fileID: 4829895949517903829, guid: 600a6468866d5ec40aed6d4f148ed634, type: 3}
+  top:
+    compatileTiles:
+    - {fileID: 11400000, guid: 55a2de6fd1b1c854d94861e6b1e4e2cd, type: 2}
+    - {fileID: 11400000, guid: f716255ef5caa534c804dd1b676c16be, type: 2}
+  bottom:
+    compatileTiles:
+    - {fileID: 11400000, guid: 55a2de6fd1b1c854d94861e6b1e4e2cd, type: 2}
+    - {fileID: 11400000, guid: f716255ef5caa534c804dd1b676c16be, type: 2}
+  left:
+    compatileTiles:
+    - {fileID: 11400000, guid: 55a2de6fd1b1c854d94861e6b1e4e2cd, type: 2}
+    - {fileID: 11400000, guid: f716255ef5caa534c804dd1b676c16be, type: 2}
+  right:
+    compatileTiles:
+    - {fileID: 11400000, guid: 55a2de6fd1b1c854d94861e6b1e4e2cd, type: 2}
+    - {fileID: 11400000, guid: f716255ef5caa534c804dd1b676c16be, type: 2}
