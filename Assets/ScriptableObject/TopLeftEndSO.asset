@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TopLeftEndSO
   m_EditorClassIdentifier: 
   prefabRef: {fileID: 4723070567855695625, guid: 32c49bcaa82ebcf4a9f3870fefa4da98, type: 3}
+  tile: {fileID: 11400000, guid: 61ef060e7059515439e11d3c34fb674e, type: 2}
   top:
     compatileTiles:
     - {fileID: 11400000, guid: dadc58b9f017c4f46a3adab58f5c7afd, type: 2}

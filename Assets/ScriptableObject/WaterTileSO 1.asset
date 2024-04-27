@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WaterTileSO 1
   m_EditorClassIdentifier: 
   prefabRef: {fileID: 4268299510716412498, guid: a68249c1799d06446b0efcb409e767fe, type: 3}
+  tile: {fileID: 11400000, guid: f4c6367ecf2e01a418746bc88a284595, type: 2}
   top:
     compatileTiles:
     - {fileID: 11400000, guid: 1628ad518b2322b4fb0d25ca5a484564, type: 2}

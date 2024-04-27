@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GrassTileSO2
   m_EditorClassIdentifier: 
   prefabRef: {fileID: 4149299206482348536, guid: aed89c286f2866f4da079bb4b524e1a7, type: 3}
+  tile: {fileID: 11400000, guid: 9a1147a055c62b14eb47ccdc2115449c, type: 2}
   top:
     compatileTiles:
     - {fileID: 11400000, guid: af5e317d1583c54488369ea3611469e2, type: 2}

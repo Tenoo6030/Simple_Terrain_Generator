@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DownLeftCornerWaterTileSO
   m_EditorClassIdentifier: 
   prefabRef: {fileID: 3679691966827733430, guid: 35eef2bd5109a434894a5158339e8e80, type: 3}
+  tile: {fileID: 11400000, guid: 446dd3652d4ae154c9d1ad0bcbbbeefd, type: 2}
   top:
     compatileTiles:
     - {fileID: 11400000, guid: dadc58b9f017c4f46a3adab58f5c7afd, type: 2}

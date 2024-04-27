@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LeftSideWaterTileSO
   m_EditorClassIdentifier: 
   prefabRef: {fileID: 297495443963324058, guid: ca1bf45f66a9ffd42930547b380f916f, type: 3}
+  tile: {fileID: 11400000, guid: 4f982aed6d6230549921b207b2264e70, type: 2}
   top:
     compatileTiles:
     - {fileID: 11400000}

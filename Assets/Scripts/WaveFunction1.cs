@@ -1,15 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-
+using UnityEngine.Tilemaps;
 
 public class WaveFunction : MonoBehaviour
 {
     [SerializeField] private int width;
     [SerializeField] private int height;
     [SerializeField] private TileSO missingTile;
+    [SerializeField] private Tilemap map;
 
+    private TileBase visibleTile;
     private TileSO[,] grid;
     private List<Vector2Int> offsets = new List<Vector2Int>()
     {
@@ -78,12 +78,16 @@ public class WaveFunction : MonoBehaviour
                 grid[x, y] = potentialTile[Random.Range(0, potentialTile.Count)];
             }
 
-            GameObject newTile = Instantiate(grid[x, y].prefabRef, new Vector3(x, y, 0f), Quaternion.identity);
+            //GameObject newTile = Instantiate(grid[x, y].prefabRef, new Vector3(x, y, 0f), Quaternion.identity);
+            Vector3Int location = new Vector3Int(x, y, 0);
+            visibleTile = grid[x, y].tile;
+            map.SetTile(location, visibleTile);
 
             toCollapse.RemoveAt(0);
         }
     }
 
+    
     private bool IsInsideGrid(Vector2Int pos)
     {
         if (pos.x > -1 && pos.x < width && pos.y > -1 && pos.y < height)

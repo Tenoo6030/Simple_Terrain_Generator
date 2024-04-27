@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [CreateAssetMenu()]
 public class TileSO : ScriptableObject
 {
    
     public GameObject prefabRef;
+    public Tile tile;
 
     public Connection top;
     public Connection bottom;
