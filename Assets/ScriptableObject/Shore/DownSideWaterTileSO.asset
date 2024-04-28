@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4edf95d3a64d664e9faa4030c00d8d3, type: 3}
+  m_Name: DownSideWaterTileSO
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 88e7f451e48c26540b6b3ab5646c8e7e, type: 2}
+  top:
+    compatileTiles:
+    - {fileID: 11400000, guid: 1628ad518b2322b4fb0d25ca5a484564, type: 2}
+    - {fileID: 11400000, guid: bd9a5397199206840bd8ed1bc4fc8ea4, type: 2}
+    - {fileID: 11400000, guid: f3786bb089a61ca48a262dc9a8fc39e1, type: 2}
+    - {fileID: 11400000, guid: 77c79a8abd1110941b8f1cd292925844, type: 2}
+    - {fileID: 11400000, guid: c12ec57dbd6537e4da34161715e9e08c, type: 2}
+  bottom:
+    compatileTiles:
+    - {fileID: 11400000, guid: f6ef6ed983fa7b64c95d88dd9bf707c4, type: 2}
+    - {fileID: 11400000, guid: a4447c84a2dc4054a95536279d29cab3, type: 2}
+    - {fileID: 11400000, guid: 3c5d98b7ad2b4c64c910d2cc604ad6e3, type: 2}
+    - {fileID: 11400000, guid: 55a2de6fd1b1c854d94861e6b1e4e2cd, type: 2}
+    - {fileID: 11400000, guid: f716255ef5caa534c804dd1b676c16be, type: 2}
+    - {fileID: 11400000, guid: 086d4d93ea5ae074596d5a2035665b81, type: 2}
+    - {fileID: 11400000, guid: 6e9d77c1f05556f4aa23d5886b6e386d, type: 2}
+    - {fileID: 11400000, guid: 9fa87d86adb2e7649943cab6ba5e08f6, type: 2}
+    - {fileID: 11400000, guid: 41e044f4b4a475e458d68217fcbda639, type: 2}
+  left:
+    compatileTiles:
+    - {fileID: 11400000}
+    - {fileID: 11400000, guid: af5e317d1583c54488369ea3611469e2, type: 2}
+    - {fileID: 11400000, guid: c620a425fbd30f143ae4ae15005b8eaa, type: 2}
+  right:
+    compatileTiles:
+    - {fileID: 11400000, guid: e9072d3e2fc9b964ca9fe89b3cb7392e, type: 2}
+    - {fileID: 11400000}
+    - {fileID: 11400000, guid: d2cf181f28469754d89ae03fefd8774c, type: 2}
+  weight: 3
