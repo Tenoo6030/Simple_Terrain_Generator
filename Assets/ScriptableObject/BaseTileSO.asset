@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4edf95d3a64d664e9faa4030c00d8d3, type: 3}
   m_Name: BaseTileSO
   m_EditorClassIdentifier: 
-  prefabRef: {fileID: 4829895949517903829, guid: 600a6468866d5ec40aed6d4f148ed634, type: 3}
+  tile: {fileID: 11400000, guid: 784896e7dbd721242bb51d78a8c66899, type: 2}
   top:
     compatileTiles:
     - {fileID: 11400000, guid: 55a2de6fd1b1c854d94861e6b1e4e2cd, type: 2}
@@ -29,3 +29,4 @@ MonoBehaviour:
     compatileTiles:
     - {fileID: 11400000, guid: 55a2de6fd1b1c854d94861e6b1e4e2cd, type: 2}
     - {fileID: 11400000, guid: f716255ef5caa534c804dd1b676c16be, type: 2}
+  weight: 0

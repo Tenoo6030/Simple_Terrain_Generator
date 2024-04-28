@@ -5,9 +5,7 @@ using UnityEngine.Tilemaps;
 
 [CreateAssetMenu()]
 public class TileSO : ScriptableObject
-{
-   
-    public GameObject prefabRef;
+{ 
     public Tile tile;
 
     public Connection top;
@@ -15,6 +13,7 @@ public class TileSO : ScriptableObject
     public Connection left;
     public Connection right;
 
+    public int weight;
 }
 [System.Serializable]
 public class Connection

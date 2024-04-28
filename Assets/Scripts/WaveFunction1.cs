@@ -29,11 +29,10 @@ public class WaveFunction : MonoBehaviour
         CollapseWorld();
     }
 
-
     private void CollapseWorld()
     {
         toCollapse.Clear();
-        toCollapse.Add(new Vector2Int(width/2,height/2));
+        toCollapse.Add(new Vector2Int(width / 2, height / 2));
 
         while (toCollapse.Count > 0)
         {
@@ -53,13 +52,19 @@ public class WaveFunction : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                CheckValidity(potentialTile, neighbourTile.bottom.compatileTiles); break;
+                                CheckValidity(potentialTile, neighbourTile.bottom.compatileTiles); 
+                                break;
                             case 1:
-                                CheckValidity(potentialTile, neighbourTile.top.compatileTiles); break;
+                                CheckValidity(potentialTile, neighbourTile.top.compatileTiles); 
+                                break;
                             case 2:
-                                CheckValidity(potentialTile, neighbourTile.left.compatileTiles); break;
+                                CheckValidity(potentialTile, neighbourTile.left.compatileTiles); 
+                                break;
                             case 3:
-                                CheckValidity(potentialTile, neighbourTile.right.compatileTiles); break;
+                                CheckValidity(potentialTile, neighbourTile.right.compatileTiles); 
+                                break;
+
+
                         }
                     }
                     else
@@ -69,16 +74,9 @@ public class WaveFunction : MonoBehaviour
                 }
             }
 
-            if (potentialTile.Count < 1)
-            {
-                grid[x, y] = missingTile;
-            }
-            else
-            {
-                grid[x, y] = potentialTile[Random.Range(0, potentialTile.Count)];
-            }
+            grid[x, y] = potentialTile.Count < 1 ? missingTile : GetWeightRandomTile(potentialTile);
 
-            //GameObject newTile = Instantiate(grid[x, y].prefabRef, new Vector3(x, y, 0f), Quaternion.identity);
+
             Vector3Int location = new Vector3Int(x, y, 0);
             visibleTile = grid[x, y].tile;
             map.SetTile(location, visibleTile);
@@ -87,18 +85,32 @@ public class WaveFunction : MonoBehaviour
         }
     }
 
-    
+    private TileSO GetWeightRandomTile(List<TileSO> tiles)
+    {
+        int sumWeight = 0;
+
+        foreach (TileSO tile in tiles)
+        {
+            sumWeight += tile.weight;
+        }
+        int pivot = Random.Range(0, sumWeight);
+
+        foreach (TileSO tile in tiles)
+        {
+            if (pivot < tile.weight) return tile;
+
+            pivot -= tile.weight;
+
+        }
+
+        return missingTile;
+    }
+
     private bool IsInsideGrid(Vector2Int pos)
     {
-        if (pos.x > -1 && pos.x < width && pos.y > -1 && pos.y < height)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return pos.x > -1 && pos.x < width && pos.y > -1 && pos.y < height;
     }
+
     private void CheckValidity(List<TileSO> optionList, List<TileSO> validOption)
     {
         for (int i = optionList.Count - 1; i > -1; i--)
@@ -108,6 +120,6 @@ public class WaveFunction : MonoBehaviour
                 optionList.RemoveAt(i);
             }
         }
-        
+
     }
 }
