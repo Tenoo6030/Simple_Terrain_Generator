@@ -11,6 +11,7 @@ public class WaveFunction : MonoBehaviour
 
     private TileBase visibleTile;
     private TileSO[,] grid;
+    private List<Vector2Int> toCollapse = new();
     private List<Vector2Int> offsets = new List<Vector2Int>()
     {
         new Vector2Int(0, 1),   // top
@@ -18,7 +19,7 @@ public class WaveFunction : MonoBehaviour
         new Vector2Int(1, 0),   // right
         new Vector2Int(-1, 0)   // left
     };
-    private List<Vector2Int> toCollapse = new();
+
     public List<TileSO> tiles = new();
 
 
@@ -40,9 +41,11 @@ public class WaveFunction : MonoBehaviour
             int y = toCollapse[0].y;
 
             List<TileSO> potentialTile = new(tiles);
+
             for (int i = 0; i < offsets.Count; i++)
             {
                 Vector2Int neighbour = new Vector2Int(x + offsets[i].x, y + offsets[i].y);
+
                 if (IsInsideGrid(neighbour))
                 {
                     TileSO neighbourTile = grid[neighbour.x, neighbour.y];
@@ -52,19 +55,17 @@ public class WaveFunction : MonoBehaviour
                         switch (i)
                         {
                             case 0:
-                                CheckValidity(potentialTile, neighbourTile.bottom.compatileTiles); 
+                                CheckValidity(potentialTile, neighbourTile.bottom.compatileTiles);
                                 break;
                             case 1:
-                                CheckValidity(potentialTile, neighbourTile.top.compatileTiles); 
+                                CheckValidity(potentialTile, neighbourTile.top.compatileTiles);
                                 break;
                             case 2:
-                                CheckValidity(potentialTile, neighbourTile.left.compatileTiles); 
+                                CheckValidity(potentialTile, neighbourTile.left.compatileTiles);
                                 break;
                             case 3:
-                                CheckValidity(potentialTile, neighbourTile.right.compatileTiles); 
+                                CheckValidity(potentialTile, neighbourTile.right.compatileTiles);
                                 break;
-
-
                         }
                     }
                     else
@@ -76,7 +77,6 @@ public class WaveFunction : MonoBehaviour
 
             grid[x, y] = potentialTile.Count < 1 ? missingTile : GetWeightRandomTile(potentialTile);
 
-
             Vector3Int location = new Vector3Int(x, y, 0);
             visibleTile = grid[x, y].tile;
             map.SetTile(location, visibleTile);
@@ -84,7 +84,6 @@ public class WaveFunction : MonoBehaviour
             toCollapse.RemoveAt(0);
         }
     }
-
     private TileSO GetWeightRandomTile(List<TileSO> tiles)
     {
         int sumWeight = 0;
@@ -93,6 +92,7 @@ public class WaveFunction : MonoBehaviour
         {
             sumWeight += tile.weight;
         }
+
         int pivot = Random.Range(0, sumWeight);
 
         foreach (TileSO tile in tiles)
@@ -100,7 +100,6 @@ public class WaveFunction : MonoBehaviour
             if (pivot < tile.weight) return tile;
 
             pivot -= tile.weight;
-
         }
 
         return missingTile;
@@ -120,6 +119,5 @@ public class WaveFunction : MonoBehaviour
                 optionList.RemoveAt(i);
             }
         }
-
     }
 }
